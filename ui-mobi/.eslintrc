@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "@antfu",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "es5"
+      }
+    ],
+    "antfu/if-newline": "off",
+    "quotes": [
+      1,
+      "single"
+    ],
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "eslint-comments/no-unlimited-disable": "off",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+    "no-console": "off",
+    //没有使用的参数，不会报错。因为个人觉的把可用的参数写上去 有利于以后的维护。
+    "@typescript-eslint/no-unused-vars": "off",
+    // 方法内部没有逻辑书写，不会报错，可以先定义好方法名，方便使用
+    "@typescript-eslint/no-empty-function": "off",
+    // ts 定义数据类型为any不报错
+    "@typescript-eslint/no-explicit-any": "off"
+  }
+}

@@ -2,7 +2,8 @@ import { UserConfig, ConfigEnv, loadEnv, defineConfig } from 'vite';
 
 import createPlugins from './vite/plugins';
 
-import path from 'path';
+import path = require('path');
+
 export default defineConfig(({ mode, command }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd());
   return {
