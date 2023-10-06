@@ -1,8 +1,8 @@
 package org.dromara.common.core.domain.model;
 
-import org.dromara.common.core.domain.dto.RoleDTO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.dromara.common.core.domain.dto.RoleDTO;
 
 import java.io.Serial;
 import java.io.Serializable;

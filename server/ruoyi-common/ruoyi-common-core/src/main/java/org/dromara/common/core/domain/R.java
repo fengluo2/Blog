@@ -1,8 +1,8 @@
 package org.dromara.common.core.domain;
 
-import org.dromara.common.core.constant.HttpStatus;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.dromara.common.core.constant.HttpStatus;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -84,7 +84,7 @@ public class R<T> implements Serializable {
     /**
      * 返回警告消息
      *
-     * @param msg 返回内容
+     * @param msg  返回内容
      * @param data 数据对象
      * @return 警告消息
      */

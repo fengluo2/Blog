@@ -27,7 +27,7 @@
             <groupId>org.dromara</groupId>
             <artifactId>ruoyi-common-job</artifactId>
         </dependency>
-        
+
     </dependencies>
 
 </project>

@@ -7,6 +7,7 @@ import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.StreamUtils;
@@ -26,7 +27,6 @@ import org.dromara.system.mapper.SysRoleMapper;
 import org.dromara.system.mapper.SysRoleMenuMapper;
 import org.dromara.system.mapper.SysTenantPackageMapper;
 import org.dromara.system.service.ISysMenuService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

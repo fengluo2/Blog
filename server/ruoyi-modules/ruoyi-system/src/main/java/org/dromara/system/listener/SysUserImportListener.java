@@ -5,6 +5,7 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.crypto.digest.BCrypt;
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.exception.ServiceException;
 import org.dromara.common.core.utils.SpringUtils;
 import org.dromara.common.core.utils.ValidatorUtils;
@@ -16,7 +17,6 @@ import org.dromara.system.domain.vo.SysUserImportVo;
 import org.dromara.system.domain.vo.SysUserVo;
 import org.dromara.system.service.ISysConfigService;
 import org.dromara.system.service.ISysUserService;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 

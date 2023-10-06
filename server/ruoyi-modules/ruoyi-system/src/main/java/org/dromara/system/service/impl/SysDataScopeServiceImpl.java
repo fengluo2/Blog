@@ -3,14 +3,14 @@ package org.dromara.system.service.impl;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.convert.Convert;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import org.dromara.system.domain.SysDept;
-import org.dromara.common.mybatis.helper.DataBaseHelper;
+import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.utils.StreamUtils;
+import org.dromara.common.mybatis.helper.DataBaseHelper;
+import org.dromara.system.domain.SysDept;
 import org.dromara.system.domain.SysRoleDept;
 import org.dromara.system.mapper.SysDeptMapper;
 import org.dromara.system.mapper.SysRoleDeptMapper;
 import org.dromara.system.service.ISysDataScopeService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

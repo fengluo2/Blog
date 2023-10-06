@@ -22,6 +22,7 @@
         <springdoc.version>2.2.0</springdoc.version>
         <therapi-javadoc.version>0.15.0</therapi-javadoc.version>
         <poi.version>5.2.3</poi.version>
+        <easy-es.version>2.0.0-beta1</easy-es.version>
         <easyexcel.version>3.3.2</easyexcel.version>
         <velocity.version>2.3</velocity.version>
         <satoken.version>1.36.0</satoken.version>
@@ -125,6 +126,12 @@
                 <version>${revision}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.easy-es</groupId>
+                <artifactId>easy-es-boot-starter</artifactId>
+                <version>${easy-es.version}</version>
             </dependency>
 
             <dependency>
@@ -349,6 +356,7 @@
         <module>ruoyi-common</module>
         <module>ruoyi-extend</module>
         <module>ruoyi-modules</module>
+        <module>maple-modules</module>
     </modules>
     <packaging>pom</packaging>
 

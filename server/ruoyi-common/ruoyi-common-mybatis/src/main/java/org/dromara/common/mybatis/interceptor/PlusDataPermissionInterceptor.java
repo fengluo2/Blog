@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.plugins.InterceptorIgnoreHelper;
 import com.baomidou.mybatisplus.core.toolkit.PluginUtils;
 import com.baomidou.mybatisplus.extension.parser.JsqlParserSupport;
 import com.baomidou.mybatisplus.extension.plugins.inner.InnerInterceptor;
-import org.dromara.common.mybatis.handler.PlusDataPermissionHandler;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.statement.delete.Delete;
 import net.sf.jsqlparser.statement.select.PlainSelect;
@@ -19,6 +18,7 @@ import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
+import org.dromara.common.mybatis.handler.PlusDataPermissionHandler;
 
 import java.sql.Connection;
 import java.sql.SQLException;

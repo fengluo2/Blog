@@ -1,8 +1,8 @@
 package org.dromara.common.mybatis.enums;
 
-import org.dromara.common.core.utils.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.dromara.common.core.utils.StringUtils;
 
 /**
  * 数据库类型

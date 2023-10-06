@@ -6,6 +6,7 @@ import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.CacheNames;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.exception.ServiceException;
@@ -22,7 +23,6 @@ import org.dromara.system.domain.bo.SysConfigBo;
 import org.dromara.system.domain.vo.SysConfigVo;
 import org.dromara.system.mapper.SysConfigMapper;
 import org.dromara.system.service.ISysConfigService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -80,6 +80,7 @@ public class SysConfigServiceImpl implements ISysConfigService, ConfigService {
 
     /**
      * 获取注册开关
+     *
      * @param tenantId 租户id
      * @return true开启，false关闭
      */
@@ -87,7 +88,7 @@ public class SysConfigServiceImpl implements ISysConfigService, ConfigService {
     public boolean selectRegisterEnabled(String tenantId) {
         SysConfig retConfig = baseMapper.selectOne(new LambdaQueryWrapper<SysConfig>()
             .eq(SysConfig::getConfigKey, "sys.account.registerUser")
-            .eq(TenantHelper.isEnable(),SysConfig::getTenantId, tenantId));
+            .eq(TenantHelper.isEnable(), SysConfig::getTenantId, tenantId));
         if (ObjectUtil.isNull(retConfig)) {
             return false;
         }

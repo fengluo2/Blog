@@ -45,7 +45,7 @@ public class SysSocialController extends BaseController {
      */
     @GetMapping("/{id}")
     public R<SysSocialVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable String id) {
+                                  @PathVariable String id) {
         return R.ok(socialUserService.queryById(id));
     }
 

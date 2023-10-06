@@ -1,8 +1,7 @@
 package org.dromara.common.core.domain.model;
 
-import lombok.Data;
-
 import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 
 /**
  * 短信登录对象

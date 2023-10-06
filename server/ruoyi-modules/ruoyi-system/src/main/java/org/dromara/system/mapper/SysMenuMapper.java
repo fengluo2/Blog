@@ -3,11 +3,11 @@ package org.dromara.system.mapper;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import org.dromara.common.core.constant.UserConstants;
-import org.dromara.system.domain.SysMenu;
-import org.dromara.common.mybatis.core.mapper.BaseMapperPlus;
-import org.dromara.system.domain.vo.SysMenuVo;
 import org.apache.ibatis.annotations.Param;
+import org.dromara.common.core.constant.UserConstants;
+import org.dromara.common.mybatis.core.mapper.BaseMapperPlus;
+import org.dromara.system.domain.SysMenu;
+import org.dromara.system.domain.vo.SysMenuVo;
 
 import java.util.List;
 

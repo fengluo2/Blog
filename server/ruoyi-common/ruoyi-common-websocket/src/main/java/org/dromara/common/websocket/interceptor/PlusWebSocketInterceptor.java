@@ -1,8 +1,8 @@
 package org.dromara.common.websocket.interceptor;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.domain.model.LoginUser;
 import org.dromara.common.satoken.utils.LoginHelper;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.socket.WebSocketHandler;

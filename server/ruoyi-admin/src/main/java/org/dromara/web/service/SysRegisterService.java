@@ -1,6 +1,7 @@
 package org.dromara.web.service;
 
 import cn.dev33.satoken.secure.BCrypt;
+import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.Constants;
 import org.dromara.common.core.constant.GlobalConstants;
 import org.dromara.common.core.domain.model.RegisterBody;
@@ -17,7 +18,6 @@ import org.dromara.common.redis.utils.RedisUtils;
 import org.dromara.common.web.config.properties.CaptchaProperties;
 import org.dromara.system.domain.bo.SysUserBo;
 import org.dromara.system.service.ISysUserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
