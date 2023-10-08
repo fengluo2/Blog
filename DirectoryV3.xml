@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <trees>
+     <tree path="/ui-docs" title="文档端" extension="" presentableText="" tooltipTitle="" icon="" textColor=""
+           backgroundColor=""/>
+     <tree path="/ui-mobi" title="移动端" extension="" presentableText="" tooltipTitle="" icon="" textColor=""
+           backgroundColor=""/>
+     <tree path="/ui-pc" title="PC端"/>
+     <tree path="/ui-admin" title="后台端"/>
+     <tree path="/server" title="后端"/>
+ </trees>
