@@ -5,6 +5,14 @@ import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.ttl.TransmittableThreadLocal;
+import org.dromara.common.core.utils.ServletUtils;
+import org.dromara.common.core.utils.SpringUtils;
+import org.dromara.common.core.utils.StringUtils;
+import org.dromara.common.json.utils.JsonUtils;
+import org.dromara.common.log.annotation.Log;
+import org.dromara.common.log.enums.BusinessStatus;
+import org.dromara.common.log.event.OperLogEvent;
+import org.dromara.common.satoken.utils.LoginHelper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -14,14 +22,6 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.dromara.common.core.utils.ServletUtils;
-import org.dromara.common.core.utils.SpringUtils;
-import org.dromara.common.core.utils.StringUtils;
-import org.dromara.common.json.utils.JsonUtils;
-import org.dromara.common.log.annotation.Log;
-import org.dromara.common.log.enums.BusinessStatus;
-import org.dromara.common.log.event.OperLogEvent;
-import org.dromara.common.satoken.utils.LoginHelper;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.http.HttpMethod;
 import org.springframework.validation.BindingResult;
@@ -44,7 +44,7 @@ public class LogAspect {
     /**
      * 排除敏感属性字段
      */
-    public static final String[] EXCLUDE_PROPERTIES = {"password", "oldPassword", "newPassword", "confirmPassword"};
+    public static final String[] EXCLUDE_PROPERTIES = { "password", "oldPassword", "newPassword", "confirmPassword" };
 
 
     /**
@@ -158,7 +158,7 @@ public class LogAspect {
         Map<String, String> paramsMap = ServletUtils.getParamMap(ServletUtils.getRequest());
         String requestMethod = operLog.getRequestMethod();
         if (MapUtil.isEmpty(paramsMap)
-            && HttpMethod.PUT.name().equals(requestMethod) || HttpMethod.POST.name().equals(requestMethod)) {
+                && HttpMethod.PUT.name().equals(requestMethod) || HttpMethod.POST.name().equals(requestMethod)) {
             String params = argsArrayToString(joinPoint.getArgs(), excludeParamNames);
             operLog.setOperParam(StringUtils.substring(params, 0, 2000));
         } else {
@@ -214,6 +214,6 @@ public class LogAspect {
             }
         }
         return o instanceof MultipartFile || o instanceof HttpServletRequest || o instanceof HttpServletResponse
-            || o instanceof BindingResult;
+               || o instanceof BindingResult;
     }
 }

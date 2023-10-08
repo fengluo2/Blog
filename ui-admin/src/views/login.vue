@@ -5,22 +5,30 @@
       <el-form-item prop="tenantId" v-if="tenantEnabled">
         <el-select v-model="loginForm.tenantId" filterable placeholder="请选择/输入公司名称" style="width: 100%">
           <el-option v-for="item in tenantList" :key="item.tenantId" :label="item.companyName" :value="item.tenantId"></el-option>
-          <template #prefix><svg-icon icon-class="company" class="el-input__icon input-icon" /></template>
+          <template #prefix>
+            <svg-icon icon-class="company" class="el-input__icon input-icon" />
+          </template>
         </el-select>
       </el-form-item>
       <el-form-item prop="username">
         <el-input v-model="loginForm.username" type="text" size="large" auto-complete="off" placeholder="账号">
-          <template #prefix><svg-icon icon-class="user" class="el-input__icon input-icon" /></template>
+          <template #prefix>
+            <svg-icon icon-class="user" class="el-input__icon input-icon" />
+          </template>
         </el-input>
       </el-form-item>
       <el-form-item prop="password">
         <el-input v-model="loginForm.password" type="password" size="large" auto-complete="off" placeholder="密码" @keyup.enter="handleLogin">
-          <template #prefix><svg-icon icon-class="password" class="el-input__icon input-icon" /></template>
+          <template #prefix>
+            <svg-icon icon-class="password" class="el-input__icon input-icon" />
+          </template>
         </el-input>
       </el-form-item>
       <el-form-item prop="code" v-if="captchaEnabled">
         <el-input v-model="loginForm.code" size="large" auto-complete="off" placeholder="验证码" style="width: 63%" @keyup.enter="handleLogin">
-          <template #prefix><svg-icon icon-class="validCode" class="el-input__icon input-icon" /></template>
+          <template #prefix>
+            <svg-icon icon-class="validCode" class="el-input__icon input-icon" />
+          </template>
         </el-input>
         <div class="login-code">
           <img :src="codeUrl" @click="getCode" class="login-code-img" />
@@ -61,10 +69,11 @@
 <script setup lang="ts">
 import { getCodeImg, getTenantList } from '@/api/login';
 import { authBinding } from '@/api/system/social/auth';
-import { useUserStore } from '@/store/modules/user';
 import { LoginData, TenantVO } from '@/api/types';
+import { HttpStatus } from '@/enums/RespEnum';
+import useAppStore from '@/store/modules/app';
+import { useUserStore } from '@/store/modules/user';
 import { to } from 'await-to-js';
-import { HttpStatus } from "@/enums/RespEnum";
 
 const userStore = useUserStore();
 const router = useRouter();
@@ -75,14 +84,14 @@ const loginForm = ref<LoginData>({
   password: 'admin123',
   rememberMe: false,
   code: '',
-  uuid: ''
+  uuid: '',
 } as LoginData);
 
 const loginRules: ElFormRules = {
-  tenantId: [{ required: true, trigger: "blur", message: "请输入您的租户编号" }],
+  tenantId: [{ required: true, trigger: 'blur', message: '请输入您的租户编号' }],
   username: [{ required: true, trigger: 'blur', message: '请输入您的账号' }],
   password: [{ required: true, trigger: 'blur', message: '请输入您的密码' }],
-  code: [{ required: true, trigger: 'change', message: '请输入验证码' }]
+  code: [{ required: true, trigger: 'change', message: '请输入验证码' }],
 };
 
 const codeUrl = ref('');
@@ -110,13 +119,13 @@ const handleLogin = () => {
       loading.value = true;
       // 勾选了需要记住密码设置在 localStorage 中设置记住用户名和密码
       if (loginForm.value.rememberMe) {
-        localStorage.setItem("tenantId", String(loginForm.value.tenantId));
+        localStorage.setItem('tenantId', String(loginForm.value.tenantId));
         localStorage.setItem('username', String(loginForm.value.username));
         localStorage.setItem('password', String(loginForm.value.password));
         localStorage.setItem('rememberMe', String(loginForm.value.rememberMe));
       } else {
         // 否则移除
-        localStorage.removeItem("tenantId");
+        localStorage.removeItem('tenantId');
         localStorage.removeItem('username');
         localStorage.removeItem('password');
         localStorage.removeItem('rememberMe');
@@ -153,7 +162,7 @@ const getCode = async () => {
 };
 
 const getLoginData = () => {
-  const tenantId = localStorage.getItem("tenantId");
+  const tenantId = localStorage.getItem('tenantId');
   const username = localStorage.getItem('username');
   const password = localStorage.getItem('password');
   const rememberMe = localStorage.getItem('rememberMe');
@@ -161,9 +170,9 @@ const getLoginData = () => {
     tenantId: tenantId === null ? String(loginForm.value.tenantId) : tenantId,
     username: username === null ? String(loginForm.value.username) : username,
     password: password === null ? String(loginForm.value.password) : String(password),
-    rememberMe: rememberMe === null ? false : Boolean(rememberMe)
+    rememberMe: rememberMe === null ? false : Boolean(rememberMe),
   } as LoginData;
-}
+};
 
 
 /**
@@ -173,16 +182,17 @@ const initTenantList = async () => {
   const { data } = await getTenantList();
   tenantEnabled.value = data.tenantEnabled === undefined ? true : data.tenantEnabled;
   if (tenantEnabled.value) {
+    useAppStore().setTenantEnabled(data.tenantEnabled);
     tenantList.value = data.voList;
     if (tenantList.value != null && tenantList.value.length !== 0) {
       loginForm.value.tenantId = tenantList.value[0].tenantId;
     }
   }
-}
+};
 
 //检测租户选择框的变化
 watch(() => loginForm.value.tenantId, () => {
-  localStorage.setItem("tenantId", String(loginForm.value.tenantId))
+  localStorage.setItem('tenantId', String(loginForm.value.tenantId));
 });
 
 /**
@@ -199,7 +209,6 @@ const doSocialLogin = (type: string) => {
     }
   });
 };
-
 
 
 onMounted(() => {

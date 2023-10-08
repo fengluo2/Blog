@@ -5,7 +5,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * api解密属性配置类
- *
  * @author wdhcr
  */
 @Data

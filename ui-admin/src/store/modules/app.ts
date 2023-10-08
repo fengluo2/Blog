@@ -1,5 +1,5 @@
-import zhCN from 'element-plus/es/locale/lang/zh-cn';
 import enUS from 'element-plus/es/locale/lang/en';
+import zhCN from 'element-plus/es/locale/lang/zh-cn';
 
 export const useAppStore = defineStore('app', () => {
   const sidebarStatus = useStorage('sidebarStatus', '1');
@@ -10,6 +10,7 @@ export const useAppStore = defineStore('app', () => {
   });
   const device = ref<string>('desktop');
   const size = useStorage('size', 'default');
+  const tenantEnabled = useStorage('tenantEnabled', true);
 
   // 语言
   const language = useStorage('language', 'zh_CN');
@@ -46,6 +47,9 @@ export const useAppStore = defineStore('app', () => {
   const setSize = (s: string): void => {
     size.value = s;
   };
+  const setTenantEnabled = (s: boolean): void => {
+    tenantEnabled.value = s;
+  };
   const toggleSideBarHide = (status: boolean): void => {
     sidebar.hide = status;
   };
@@ -60,11 +64,13 @@ export const useAppStore = defineStore('app', () => {
     language,
     locale,
     size,
+    tenantEnabled,
     changeLanguage,
     toggleSideBar,
     closeSideBar,
     toggleDevice,
     setSize,
+    setTenantEnabled,
     toggleSideBarHide
   };
 });

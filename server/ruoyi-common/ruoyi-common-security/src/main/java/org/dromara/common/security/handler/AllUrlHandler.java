@@ -1,8 +1,8 @@
 package org.dromara.common.security.handler;
 
 import cn.hutool.core.util.ReUtil;
-import lombok.Data;
 import org.dromara.common.core.utils.SpringUtils;
+import lombok.Data;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
@@ -31,7 +31,7 @@ public class AllUrlHandler implements InitializingBean {
         map.keySet().forEach(info -> {
             // 获取注解上边的 path 替代 path variable 为 *
             Objects.requireNonNull(info.getPathPatternsCondition().getPatterns())
-                .forEach(url -> set.add(ReUtil.replaceAll(url.getPatternString(), PATTERN, "*")));
+                    .forEach(url -> set.add(ReUtil.replaceAll(url.getPatternString(), PATTERN, "*")));
         });
         urls.addAll(set);
     }

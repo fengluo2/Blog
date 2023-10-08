@@ -3,9 +3,9 @@ package org.dromara.generator.mapper;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.annotation.InterceptorIgnore;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.apache.ibatis.annotations.Param;
 import org.dromara.common.mybatis.core.mapper.BaseMapperPlus;
 import org.dromara.generator.domain.GenTable;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 

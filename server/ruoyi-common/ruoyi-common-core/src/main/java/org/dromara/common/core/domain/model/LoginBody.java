@@ -101,18 +101,18 @@ public class LoginBody {
     /**
      * 第三方登录平台
      */
-    @NotBlank(message = "{social.source.not.blank}", groups = {SocialGroup.class})
+    @NotBlank(message = "{social.source.not.blank}" , groups = {SocialGroup.class})
     private String source;
 
     /**
      * 第三方登录code
      */
-    @NotBlank(message = "{social.code.not.blank}", groups = {SocialGroup.class})
+    @NotBlank(message = "{social.code.not.blank}" , groups = {SocialGroup.class})
     private String socialCode;
 
     /**
      * 第三方登录socialState
      */
-    @NotBlank(message = "{social.state.not.blank}", groups = {SocialGroup.class})
+    @NotBlank(message = "{social.state.not.blank}" , groups = {SocialGroup.class})
     private String socialState;
 }

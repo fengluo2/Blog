@@ -1,8 +1,6 @@
 package org.dromara.system.controller.monitor;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
-import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.GlobalConstants;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.excel.utils.ExcelUtil;
@@ -15,6 +13,8 @@ import org.dromara.common.web.core.BaseController;
 import org.dromara.system.domain.bo.SysLogininforBo;
 import org.dromara.system.domain.vo.SysLogininforVo;
 import org.dromara.system.service.ISysLogininforService;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -55,7 +55,6 @@ public class SysLogininforController extends BaseController {
 
     /**
      * 批量删除登录日志
-     *
      * @param infoIds 日志ids
      */
     @SaCheckPermission("monitor:logininfor:remove")

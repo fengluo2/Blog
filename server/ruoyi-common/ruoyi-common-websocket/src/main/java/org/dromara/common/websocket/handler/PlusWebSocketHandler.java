@@ -1,10 +1,10 @@
 package org.dromara.common.websocket.handler;
 
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.domain.model.LoginUser;
 import org.dromara.common.websocket.dto.WebSocketMessageDto;
 import org.dromara.common.websocket.holder.WebSocketSessionHolder;
 import org.dromara.common.websocket.utils.WebSocketUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.socket.*;
 import org.springframework.web.socket.handler.AbstractWebSocketHandler;
 

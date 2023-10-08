@@ -2,7 +2,6 @@
 <div style="height: 10px; clear: both;"></div>
 
 - - -
-
 ## 平台简介
 
 [![码云Gitee](https://gitee.com/dromara/RuoYi-Vue-Plus/badge/star.svg?theme=blue)](https://gitee.com/dromara/RuoYi-Vue-Plus)
@@ -18,7 +17,7 @@
 > RuoYi-Vue-Plus 是重写 RuoYi-Vue 针对 `分布式集群与多租户` 场景全方位升级(不兼容原框架)
 
 > 项目代码、文档 均开源免费可商用 遵循开源协议在项目中保留开源协议文件即可<br>
-> 活到老写到老 为兴趣而开源 为学习而开源 为让大家真正可以学到技术而开源
+活到老写到老 为兴趣而开源 为学习而开源 为让大家真正可以学到技术而开源
 
 > 系统演示: [传送门](https://plus-doc.dromara.org/#/common/demo_system)
 
@@ -75,6 +74,7 @@
 | 代码单例测试      | 提供单例测试 使用方式编写方法与maven多环境单测插件                                                                                      | 只提供基础功能 其他需自行编写扩展                                                                  |
 | Demo案例      | 提供框架功能的实际使用案例 单独一个模块提供了很多很全                                                                                       | 无                                                                                  |
 
+
 ## 本框架与RuoYi的业务差异
 
 | 业务     | 功能说明                                                                 | 本框架 | RuoYi            |
@@ -107,20 +107,21 @@
 
 使用框架前请仔细阅读文档重点注意事项
 <br>
-> [初始化项目 必看](https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/init)
->> [https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/init](https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/init)
+>[初始化项目 必看](https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/init)
+>>[https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/init](https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/init)
 >
 >[专栏与视频 入门必看](https://plus-doc.dromara.org/#/common/column)
->> [https://plus-doc.dromara.org/#/common/column](https://plus-doc.dromara.org/#/common/column)
+>>[https://plus-doc.dromara.org/#/common/column](https://plus-doc.dromara.org/#/common/column)
 >
 >[部署项目 必看](https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/deploy)
->> [https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/deploy](https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/deploy)
->
+>>[https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/deploy](https://plus-doc.dromara.org/#/ruoyi-vue-plus/quickstart/deploy)
+> 
 >[参考文档 Wiki](https://plus-doc.dromara.org)
->> [https://plus-doc.dromara.org](https://plus-doc.dromara.org)
->
+>>[https://plus-doc.dromara.org](https://plus-doc.dromara.org)
+> 
 >[参考文档(国内备份)](https://dromara.gitee.io/plus-doc)
->> [https://dromara.gitee.io/plus-doc](https://dromara.gitee.io/plus-doc)
+>>[https://dromara.gitee.io/plus-doc](https://dromara.gitee.io/plus-doc)
+
 
 ## 软件架构图
 
@@ -139,12 +140,10 @@
 * 用户扩展项目 [扩展项目列表](https://plus-doc.dromara.org/#/ruoyi-vue-plus/extend-project/list)
 
 ## 加群与捐献
-
-> [加群与捐献](https://plus-doc.dromara.org/#/ruoyi-vue-plus/other/group_chat)
->> [https://plus-doc.dromara.org/#/ruoyi-vue-plus/other/group_chat](https://plus-doc.dromara.org/#/ruoyi-vue-plus/other/group_chat)
+>[加群与捐献](https://plus-doc.dromara.org/#/ruoyi-vue-plus/other/group_chat)
+>>[https://plus-doc.dromara.org/#/ruoyi-vue-plus/other/group_chat](https://plus-doc.dromara.org/#/ruoyi-vue-plus/other/group_chat)
 
 ## 捐献作者
-
 作者为兼职做开源,平时还需要工作,如果帮到了您可以请作者吃个盒饭  
 <img src="https://foruda.gitee.com/images/1678975784848381069/d8661ed9_1766278.png" width="300px" height="450px" />
 <img src="https://foruda.gitee.com/images/1678975801230205215/6f96229d_1766278.png" width="300px" height="450px" />

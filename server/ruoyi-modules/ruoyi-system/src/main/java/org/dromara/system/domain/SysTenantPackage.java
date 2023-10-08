@@ -1,13 +1,11 @@
 package org.dromara.system.domain;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.dromara.common.mybatis.core.domain.BaseEntity;
-
 import java.io.Serial;
+
+import org.dromara.common.mybatis.core.domain.BaseEntity;
 
 /**
  * 租户套餐对象 sys_tenant_package

@@ -4,10 +4,10 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.Data;
 import org.dromara.common.core.exception.ServiceException;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.core.utils.sql.SqlUtil;
+import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -72,7 +72,7 @@ public class PageQuery implements Serializable {
 
     /**
      * 构建排序
-     * <p>
+     *
      * 支持的用法如下:
      * {isAsc:"asc",orderByColumn:"id"} order by id asc
      * {isAsc:"asc",orderByColumn:"id,createTime"} order by id asc,create_time asc

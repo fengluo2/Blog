@@ -4,7 +4,6 @@ import cn.dev33.satoken.annotation.SaCheckPermission;
 import cn.dev33.satoken.annotation.SaCheckRole;
 import cn.dev33.satoken.annotation.SaMode;
 import cn.hutool.core.lang.tree.Tree;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.TenantConstants;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.domain.R;
@@ -19,6 +18,7 @@ import org.dromara.system.domain.vo.MenuTreeSelectVo;
 import org.dromara.system.domain.vo.RouterVo;
 import org.dromara.system.domain.vo.SysMenuVo;
 import org.dromara.system.service.ISysMenuService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,8 +52,8 @@ public class SysMenuController extends BaseController {
      * 获取菜单列表
      */
     @SaCheckRole(value = {
-        TenantConstants.SUPER_ADMIN_ROLE_KEY,
-        TenantConstants.TENANT_ADMIN_ROLE_KEY
+            TenantConstants.SUPER_ADMIN_ROLE_KEY,
+            TenantConstants.TENANT_ADMIN_ROLE_KEY
     }, mode = SaMode.OR)
     @SaCheckPermission("system:menu:list")
     @GetMapping("/list")
@@ -68,8 +68,8 @@ public class SysMenuController extends BaseController {
      * @param menuId 菜单ID
      */
     @SaCheckRole(value = {
-        TenantConstants.SUPER_ADMIN_ROLE_KEY,
-        TenantConstants.TENANT_ADMIN_ROLE_KEY
+            TenantConstants.SUPER_ADMIN_ROLE_KEY,
+            TenantConstants.TENANT_ADMIN_ROLE_KEY
     }, mode = SaMode.OR)
     @SaCheckPermission("system:menu:query")
     @GetMapping(value = "/{menuId}")

@@ -1,9 +1,9 @@
 package org.dromara.demo.domain;
 
 import com.baomidou.mybatisplus.annotation.*;
+import org.dromara.common.tenant.core.TenantEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.dromara.common.tenant.core.TenantEntity;
 
 import java.io.Serial;
 

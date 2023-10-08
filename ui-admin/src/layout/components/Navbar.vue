@@ -16,8 +16,10 @@
           @change="dynamicTenantEvent"
           @clear="dynamicClearEvent"
         >
-          <el-option v-for="item in tenantList" :key="item.tenantId" :label="item.companyName" :value="item.tenantId"> </el-option>
-          <template #prefix><svg-icon icon-class="company" class="el-input__icon input-icon" /></template>
+          <el-option v-for="item in tenantList" :key="item.tenantId" :label="item.companyName" :value="item.tenantId"></el-option>
+          <template #prefix>
+            <svg-icon icon-class="company" class="el-input__icon input-icon" />
+          </template>
         </el-select>
 
         <!-- <header-search id="header-search" class="right-menu-item" /> -->
@@ -51,7 +53,9 @@
         <el-dropdown @command="handleCommand" class="right-menu-item hover-effect" trigger="click">
           <div class="avatar-wrapper">
             <img :src="userStore.avatar" class="user-avatar" />
-            <el-icon><caret-bottom /></el-icon>
+            <el-icon>
+              <caret-bottom />
+            </el-icon>
           </div>
           <template #dropdown>
             <el-dropdown-menu>
@@ -73,14 +77,14 @@
 </template>
 
 <script setup lang="ts">
-import SearchMenu from './TopBar/search.vue';
+import { getTenantList } from '@/api/login';
+import { dynamicClear, dynamicTenant } from '@/api/system/tenant';
+import { TenantVO } from '@/api/types';
 import useAppStore from '@/store/modules/app';
-import useUserStore from '@/store/modules/user';
 import useSettingsStore from '@/store/modules/settings';
-import { getTenantList } from "@/api/login";
-import { dynamicClear, dynamicTenant } from "@/api/system/tenant";
-import { ComponentInternalInstance } from "vue";
-import { TenantVO } from "@/api/types";
+import useUserStore from '@/store/modules/user';
+import { ComponentInternalInstance } from 'vue';
+import SearchMenu from './TopBar/search.vue';
 
 const appStore = useAppStore();
 const userStore = useUserStore();
@@ -100,7 +104,7 @@ const searchMenuRef = ref<InstanceType<typeof SearchMenu>>();
 
 const openSearchMenu = () => {
   searchMenuRef.value?.openSearch();
-}
+};
 
 // 动态切换
 const dynamicTenantEvent = async (tenantId: string) => {
@@ -110,63 +114,64 @@ const dynamicTenantEvent = async (tenantId: string) => {
     proxy?.$tab.closeAllPage();
     proxy?.$router.push('/');
   }
-}
+};
 
 const dynamicClearEvent = async () => {
   await dynamicClear();
   dynamic.value = false;
   proxy?.$tab.closeAllPage();
   proxy?.$router.push('/');
-}
+};
 
 /** 租户列表 */
 const initTenantList = async () => {
   const { data } = await getTenantList();
   tenantEnabled.value = data.tenantEnabled === undefined ? true : data.tenantEnabled;
   if (tenantEnabled.value) {
+    useAppStore().setTenantEnabled(data.tenantEnabled);
     tenantList.value = data.voList;
   }
-}
+};
 
 defineExpose({
   initTenantList,
-})
+});
 
 const toggleSideBar = () => {
   appStore.toggleSideBar(false);
-}
+};
 
 const logout = async () => {
-    await ElMessageBox.confirm('确定注销并退出系统吗？', '提示', {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
-      type: 'warning'
-    })
-    await userStore.logout()
-    location.href = import.meta.env.VITE_APP_CONTEXT_PATH + 'index';
-}
+  await ElMessageBox.confirm('确定注销并退出系统吗？', '提示', {
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    type: 'warning',
+  });
+  await userStore.logout();
+  location.href = import.meta.env.VITE_APP_CONTEXT_PATH + 'index';
+};
 
-const emits = defineEmits(['setLayout'])
+const emits = defineEmits(['setLayout']);
 const setLayout = () => {
-    emits('setLayout');
-}
+  emits('setLayout');
+};
 // 定义Command方法对象 通过key直接调用方法
-const commandMap: {[key: string]: any} = {
-    setLayout,
-    logout
+const commandMap: { [key: string]: any } = {
+  setLayout,
+  logout,
 };
 const handleCommand = (command: string) => {
-    // 判断是否存在该方法
-    if (commandMap[command]) {
-        commandMap[command]();
-    }
-}
+  // 判断是否存在该方法
+  if (commandMap[command]) {
+    commandMap[command]();
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 
 :deep(.el-select .el-input__wrapper) {
-  height:30px;
+  height: 30px;
 }
 
 .flex {

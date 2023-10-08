@@ -2,7 +2,6 @@ package org.dromara.system.controller.system;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import cn.hutool.core.convert.Convert;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.utils.StringUtils;
@@ -12,6 +11,7 @@ import org.dromara.common.web.core.BaseController;
 import org.dromara.system.domain.bo.SysDeptBo;
 import org.dromara.system.domain.vo.SysDeptVo;
 import org.dromara.system.service.ISysDeptService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 

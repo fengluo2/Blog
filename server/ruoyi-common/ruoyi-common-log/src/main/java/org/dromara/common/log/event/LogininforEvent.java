@@ -1,7 +1,8 @@
 package org.dromara.common.log.event;
 
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.Data;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.Serial;
 import java.io.Serializable;

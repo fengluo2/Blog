@@ -1,12 +1,12 @@
 "use client";
 
-import PostCategoryCard from "@/components/card-post-category";
 import AdvertisingCard from "@/components/card-advertising";
+import PostCategoryCard from "@/components/card-post-category";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
-  console.log(process.env.VITE_APP_BASE_API);
+  // console.log(process.env.VITE_APP_BASE_API);
   const [postList, setPostList] = useState<
     {
       id: string;

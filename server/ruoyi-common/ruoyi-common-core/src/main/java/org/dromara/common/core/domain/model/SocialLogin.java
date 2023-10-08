@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-public class SocialLogin extends LoginUser {
+public class SocialLogin extends LoginUser{
 
     /**
      * openid

@@ -1,12 +1,13 @@
 package org.dromara.common.mybatis.handler;
 
-import jakarta.servlet.http.HttpServletRequest;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.domain.R;
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.MyBatisSystemException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * Mybatis异常处理器
