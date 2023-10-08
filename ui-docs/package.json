@@ -2,13 +2,12 @@
   "name": "docs",
   "version": "1.0.0",
   "description": "项目文档",
-  "main": "index.js",
+  "author": "Zhang",
+  "license": "MIT",
   "scripts": {
     "dev": "vuepress dev src",
     "prod:build": "vuepress build src"
   },
-  "author": "Zhang",
-  "license": "MIT",
   "devDependencies": {
     "vuepress": "^2.0.0-beta.67"
   }

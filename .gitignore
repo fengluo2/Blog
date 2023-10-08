@@ -1,9 +1,33 @@
+######################################################################################
+# idea
 .idea
 *.iml
 
+######################################################################################
+# 项目文件
+
+### server配置文件 ###
 application-dev.yml
 application-dev.properties
 application-prod.yml
 application-prod.properties
 
+### server日志 ###
 /logs
+
+### 前端文件 ###
+node_modules
+package-lock.json
+.env.development
+.env.production
+
+### 编译文件 ###
+.next
+next-env.d.ts
+
+auto-imports.d.ts
+components.d.ts
+dist
+
+.cache
+.temp
