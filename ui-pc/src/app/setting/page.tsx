@@ -1,5 +1,5 @@
 import Image from "next/image";
 
 export default function Account() {
-  return <main></main>;
+  return <></>;
 }

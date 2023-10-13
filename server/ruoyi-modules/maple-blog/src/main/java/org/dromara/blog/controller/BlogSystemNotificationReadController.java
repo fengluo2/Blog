@@ -1,26 +1,27 @@
 package org.dromara.blog.controller;
 
-import java.util.List;
-
-import lombok.RequiredArgsConstructor;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.validation.constraints.*;
 import cn.dev33.satoken.annotation.SaCheckPermission;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import lombok.RequiredArgsConstructor;
 import org.dromara.blog.domain.bo.BlogSystemNotificationReadBo;
+import org.dromara.blog.domain.vo.BlogSystemNotificationReadVo;
 import org.dromara.blog.service.IBlogSystemNotificationReadService;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.validation.annotation.Validated;
-import org.dromara.common.idempotent.annotation.RepeatSubmit;
-import org.dromara.common.log.annotation.Log;
-import org.dromara.common.web.core.BaseController;
-import org.dromara.common.mybatis.core.page.PageQuery;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.validate.AddGroup;
 import org.dromara.common.core.validate.EditGroup;
-import org.dromara.common.log.enums.BusinessType;
 import org.dromara.common.excel.utils.ExcelUtil;
-import org.dromara.blog.domain.vo.BlogSystemNotificationReadVo;
+import org.dromara.common.idempotent.annotation.RepeatSubmit;
+import org.dromara.common.log.annotation.Log;
+import org.dromara.common.log.enums.BusinessType;
+import org.dromara.common.mybatis.core.page.PageQuery;
 import org.dromara.common.mybatis.core.page.TableDataInfo;
+import org.dromara.common.web.core.BaseController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 系统通知查看
@@ -64,7 +65,7 @@ public class BlogSystemNotificationReadController extends BaseController {
     @SaCheckPermission("blog:systemNotificationRead:query")
     @GetMapping("/{systemNotificationId}")
     public R<BlogSystemNotificationReadVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable Long systemNotificationId) {
+                                                   @PathVariable Long systemNotificationId) {
         return R.ok(blogSystemNotificationReadService.queryById(systemNotificationId));
     }
 

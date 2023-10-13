@@ -1,3 +1,10 @@
+DROP DATABASE IF EXISTS `blog`;
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+use blog;
+
 -- ----------------------------
 -- 第三方平台授权表
 -- ----------------------------

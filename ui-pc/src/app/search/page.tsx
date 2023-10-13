@@ -1,10 +1,8 @@
 "use client";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import {useSearchParams} from "next/navigation";
+import {useState} from "react";
 import PostCategoryCard from "@/components/card-post-category";
 import AdvertisingCard from "@/components/card-advertising";
-import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
 export default function Search() {
   const searchParams = useSearchParams();
@@ -16,7 +14,7 @@ export default function Search() {
   const [extendConditionsRange, setExtendConditionsRange] = useState(false);
   const [extendConditionsSort, setExtendConditionsSort] = useState(false);
 
-  if (searchOption.keyword){
+  if (searchOption.keyword) {
     searchSub();
   }
 
@@ -60,8 +58,8 @@ export default function Search() {
   }
 
   return (
-    <main className="py-10">
-      <div className="mx-auto max-w-3xl space-y-8 sm:px-6 md:items-center md:justify-between lg:max-w-7xl">
+    <>
+      <div className="my-10 mx-auto max-w-3xl space-y-8 sm:px-6 md:items-center md:justify-between lg:max-w-7xl">
         <div className="bg-white px-0 shadow sm:rounded-lg">
           <div
             className={
@@ -105,8 +103,8 @@ export default function Search() {
               排序
             </button>
           </div>
-          <ExtendSearchConditionsRangeDiv />
-          <ExtendSearchConditionsSortDiv />
+          <ExtendSearchConditionsRangeDiv/>
+          <ExtendSearchConditionsSortDiv/>
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-flow-col-dense lg:grid-cols-3">
@@ -120,12 +118,12 @@ export default function Search() {
           </section>
 
           <div className="space-y-6 lg:col-span-1 lg:col-start-3">
-            <PostCategoryCard />
+            <PostCategoryCard/>
 
-            <AdvertisingCard />
+            <AdvertisingCard/>
           </div>
         </div>
       </div>
-    </main>
+    </>
   );
 }

@@ -1,22 +1,22 @@
 package org.dromara.blog.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.RequiredArgsConstructor;
+import org.dromara.blog.domain.BlogSystemNotificationRead;
 import org.dromara.blog.domain.bo.BlogSystemNotificationReadBo;
 import org.dromara.blog.domain.vo.BlogSystemNotificationReadVo;
 import org.dromara.blog.mapper.BlogSystemNotificationReadMapper;
 import org.dromara.blog.service.IBlogSystemNotificationReadService;
 import org.dromara.common.core.utils.MapstructUtils;
-import org.dromara.common.mybatis.core.page.TableDataInfo;
 import org.dromara.common.mybatis.core.page.PageQuery;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import lombok.RequiredArgsConstructor;
+import org.dromara.common.mybatis.core.page.TableDataInfo;
 import org.springframework.stereotype.Service;
-import org.dromara.blog.domain.BlogSystemNotificationRead;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.Collection;
 
 /**
  * 系统通知查看Service业务层处理
@@ -34,7 +34,7 @@ public class BlogSystemNotificationReadServiceImpl implements IBlogSystemNotific
      * 查询系统通知查看
      */
     @Override
-    public BlogSystemNotificationReadVo queryById(Long systemNotificationId){
+    public BlogSystemNotificationReadVo queryById(Long systemNotificationId) {
         return baseMapper.selectVoById(systemNotificationId);
     }
 
@@ -90,7 +90,7 @@ public class BlogSystemNotificationReadServiceImpl implements IBlogSystemNotific
     /**
      * 保存前的数据校验
      */
-    private void validEntityBeforeSave(BlogSystemNotificationRead entity){
+    private void validEntityBeforeSave(BlogSystemNotificationRead entity) {
         //TODO 做一些数据校验,如唯一约束
     }
 
@@ -99,7 +99,7 @@ public class BlogSystemNotificationReadServiceImpl implements IBlogSystemNotific
      */
     @Override
     public Boolean deleteWithValidByIds(Collection<Long> ids, Boolean isValid) {
-        if(isValid){
+        if (isValid) {
             //TODO 做一些业务上的校验,判断是否需要校验
         }
         return baseMapper.deleteBatchIds(ids) > 0;

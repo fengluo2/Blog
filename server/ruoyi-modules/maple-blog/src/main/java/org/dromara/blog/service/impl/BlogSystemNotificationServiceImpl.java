@@ -1,5 +1,9 @@
 package org.dromara.blog.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.RequiredArgsConstructor;
 import org.dromara.blog.domain.BlogSystemNotification;
 import org.dromara.blog.domain.bo.BlogSystemNotificationBo;
 import org.dromara.blog.domain.vo.BlogSystemNotificationVo;
@@ -7,17 +11,13 @@ import org.dromara.blog.mapper.BlogSystemNotificationMapper;
 import org.dromara.blog.service.IBlogSystemNotificationService;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.StringUtils;
-import org.dromara.common.mybatis.core.page.TableDataInfo;
 import org.dromara.common.mybatis.core.page.PageQuery;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import lombok.RequiredArgsConstructor;
+import org.dromara.common.mybatis.core.page.TableDataInfo;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.Collection;
 
 /**
  * 系统通知Service业务层处理
@@ -35,7 +35,7 @@ public class BlogSystemNotificationServiceImpl implements IBlogSystemNotificatio
      * 查询系统通知
      */
     @Override
-    public BlogSystemNotificationVo queryById(Long id){
+    public BlogSystemNotificationVo queryById(Long id) {
         return baseMapper.selectVoById(id);
     }
 
@@ -94,7 +94,7 @@ public class BlogSystemNotificationServiceImpl implements IBlogSystemNotificatio
     /**
      * 保存前的数据校验
      */
-    private void validEntityBeforeSave(BlogSystemNotification entity){
+    private void validEntityBeforeSave(BlogSystemNotification entity) {
         //TODO 做一些数据校验,如唯一约束
     }
 
@@ -103,7 +103,7 @@ public class BlogSystemNotificationServiceImpl implements IBlogSystemNotificatio
      */
     @Override
     public Boolean deleteWithValidByIds(Collection<Long> ids, Boolean isValid) {
-        if(isValid){
+        if (isValid) {
             //TODO 做一些业务上的校验,判断是否需要校验
         }
         return baseMapper.deleteBatchIds(ids) > 0;

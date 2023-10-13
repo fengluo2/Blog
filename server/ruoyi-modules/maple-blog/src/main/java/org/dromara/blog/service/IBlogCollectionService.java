@@ -1,9 +1,9 @@
 package org.dromara.blog.service;
 
-import org.dromara.blog.domain.vo.BlogCollectionVo;
 import org.dromara.blog.domain.bo.BlogCollectionBo;
-import org.dromara.common.mybatis.core.page.TableDataInfo;
+import org.dromara.blog.domain.vo.BlogCollectionVo;
 import org.dromara.common.mybatis.core.page.PageQuery;
+import org.dromara.common.mybatis.core.page.TableDataInfo;
 
 import java.util.Collection;
 import java.util.List;

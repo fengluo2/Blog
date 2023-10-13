@@ -1,10 +1,10 @@
 package org.dromara.blog.domain.vo;
 
-import org.dromara.blog.domain.BlogPrivateChat;
 import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
+import org.dromara.blog.domain.BlogPrivateChat;
 
 import java.io.Serial;
 import java.io.Serializable;

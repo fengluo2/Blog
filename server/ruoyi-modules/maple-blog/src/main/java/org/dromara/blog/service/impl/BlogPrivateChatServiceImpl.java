@@ -1,22 +1,22 @@
 package org.dromara.blog.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.RequiredArgsConstructor;
 import org.dromara.blog.domain.BlogPrivateChat;
 import org.dromara.blog.domain.bo.BlogPrivateChatBo;
 import org.dromara.blog.domain.vo.BlogPrivateChatVo;
 import org.dromara.blog.mapper.BlogPrivateChatMapper;
 import org.dromara.blog.service.IBlogPrivateChatService;
 import org.dromara.common.core.utils.MapstructUtils;
-import org.dromara.common.mybatis.core.page.TableDataInfo;
 import org.dromara.common.mybatis.core.page.PageQuery;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import lombok.RequiredArgsConstructor;
+import org.dromara.common.mybatis.core.page.TableDataInfo;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.Collection;
 
 /**
  * 私聊Service业务层处理
@@ -34,7 +34,7 @@ public class BlogPrivateChatServiceImpl implements IBlogPrivateChatService {
      * 查询私聊
      */
     @Override
-    public BlogPrivateChatVo queryById(Long id){
+    public BlogPrivateChatVo queryById(Long id) {
         return baseMapper.selectVoById(id);
     }
 
@@ -94,7 +94,7 @@ public class BlogPrivateChatServiceImpl implements IBlogPrivateChatService {
     /**
      * 保存前的数据校验
      */
-    private void validEntityBeforeSave(BlogPrivateChat entity){
+    private void validEntityBeforeSave(BlogPrivateChat entity) {
         //TODO 做一些数据校验,如唯一约束
     }
 
@@ -103,7 +103,7 @@ public class BlogPrivateChatServiceImpl implements IBlogPrivateChatService {
      */
     @Override
     public Boolean deleteWithValidByIds(Collection<Long> ids, Boolean isValid) {
-        if(isValid){
+        if (isValid) {
             //TODO 做一些业务上的校验,判断是否需要校验
         }
         return baseMapper.deleteBatchIds(ids) > 0;

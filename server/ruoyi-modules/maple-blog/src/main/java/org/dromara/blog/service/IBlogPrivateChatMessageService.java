@@ -1,9 +1,9 @@
 package org.dromara.blog.service;
 
-import org.dromara.blog.domain.vo.BlogPrivateChatMessageVo;
 import org.dromara.blog.domain.bo.BlogPrivateChatMessageBo;
-import org.dromara.common.mybatis.core.page.TableDataInfo;
+import org.dromara.blog.domain.vo.BlogPrivateChatMessageVo;
 import org.dromara.common.mybatis.core.page.PageQuery;
+import org.dromara.common.mybatis.core.page.TableDataInfo;
 
 import java.util.Collection;
 import java.util.List;

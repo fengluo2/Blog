@@ -1,11 +1,5 @@
 "use client";
-import {
-  CheckIcon,
-  HandThumbUpIcon,
-  PaperClipIcon,
-  QuestionMarkCircleIcon,
-  UserIcon,
-} from "@heroicons/react/20/solid";
+import {CheckIcon, HandThumbUpIcon, PaperClipIcon, QuestionMarkCircleIcon, UserIcon,} from "@heroicons/react/20/solid";
 import AuthorIntroductionCard from "@/components/card-author-introduction";
 import PostCategoryCard from "@/components/card-post-category";
 import AdvertisingCard from "@/components/card-advertising";
@@ -17,13 +11,13 @@ const user = {
     "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
 };
 const attachments = [
-  { name: "resume_front_end_developer.pdf", href: "#" },
-  { name: "coverletter_front_end_developer.pdf", href: "#" },
+  {name: "resume_front_end_developer.pdf", href: "#"},
+  {name: "coverletter_front_end_developer.pdf", href: "#"},
 ];
 const eventTypes = {
-  applied: { icon: UserIcon, bgColorClass: "bg-gray-400" },
-  advanced: { icon: HandThumbUpIcon, bgColorClass: "bg-blue-500" },
-  completed: { icon: CheckIcon, bgColorClass: "bg-green-500" },
+  applied: {icon: UserIcon, bgColorClass: "bg-gray-400"},
+  advanced: {icon: HandThumbUpIcon, bgColorClass: "bg-blue-500"},
+  completed: {icon: CheckIcon, bgColorClass: "bg-green-500"},
 };
 const timeline = [
   {
@@ -97,8 +91,9 @@ function classNames(...classes: String[]) {
 
 export default function Post() {
   return (
-    <main className="py-10">
-      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+    <>
+      <div
+        className="my-10 mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
         <div className="space-y-6 lg:col-span-2 lg:col-start-1">
           {/* Description list*/}
           <section aria-labelledby="applicant-information-title">
@@ -308,13 +303,13 @@ export default function Post() {
         </div>
 
         <div className="space-y-6 lg:col-span-1 lg:col-start-3">
-          <AuthorIntroductionCard />
+          <AuthorIntroductionCard/>
 
-          <PostCategoryCard />
+          <PostCategoryCard/>
 
-          <AdvertisingCard />
+          <AdvertisingCard/>
         </div>
       </div>
-    </main>
+    </>
   );
 }

@@ -19,9 +19,9 @@ export default function Home() {
     },
   ]);
   return (
-    <main className="py-10">
+    <>
       {/* Page header */}
-      <div className="mx-auto max-w-3xl sm:px-6 md:items-center md:justify-between lg:max-w-7xl">
+      <div className="mx-auto my-10 max-w-3xl sm:px-6  md:items-center md:justify-between lg:max-w-7xl">
         <div className="bg-white p-4 shadow sm:rounded-lg">
           <h1 className="text-2xl font-bold text-gray-900">Ricardo Cooper</h1>
         </div>
@@ -51,6 +51,6 @@ export default function Home() {
 
         <AdvertisingCard className="lg:col-span-1 lg:col-start-3" />
       </div>
-    </main>
+    </>
   );
 }

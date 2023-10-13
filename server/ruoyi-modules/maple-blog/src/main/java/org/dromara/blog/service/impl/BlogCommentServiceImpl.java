@@ -1,23 +1,23 @@
 package org.dromara.blog.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.RequiredArgsConstructor;
+import org.dromara.blog.domain.BlogComment;
 import org.dromara.blog.domain.bo.BlogCommentBo;
+import org.dromara.blog.domain.vo.BlogCommentVo;
 import org.dromara.blog.mapper.BlogCommentMapper;
 import org.dromara.blog.service.IBlogCommentService;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.StringUtils;
-import org.dromara.common.mybatis.core.page.TableDataInfo;
 import org.dromara.common.mybatis.core.page.PageQuery;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import lombok.RequiredArgsConstructor;
+import org.dromara.common.mybatis.core.page.TableDataInfo;
 import org.springframework.stereotype.Service;
-import org.dromara.blog.domain.vo.BlogCommentVo;
-import org.dromara.blog.domain.BlogComment;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.Collection;
 
 /**
  * 评论Service业务层处理
@@ -35,7 +35,7 @@ public class BlogCommentServiceImpl implements IBlogCommentService {
      * 查询评论
      */
     @Override
-    public BlogCommentVo queryById(Long id){
+    public BlogCommentVo queryById(Long id) {
         return baseMapper.selectVoById(id);
     }
 
@@ -96,7 +96,7 @@ public class BlogCommentServiceImpl implements IBlogCommentService {
     /**
      * 保存前的数据校验
      */
-    private void validEntityBeforeSave(BlogComment entity){
+    private void validEntityBeforeSave(BlogComment entity) {
         //TODO 做一些数据校验,如唯一约束
     }
 
@@ -105,7 +105,7 @@ public class BlogCommentServiceImpl implements IBlogCommentService {
      */
     @Override
     public Boolean deleteWithValidByIds(Collection<Long> ids, Boolean isValid) {
-        if(isValid){
+        if (isValid) {
             //TODO 做一些业务上的校验,判断是否需要校验
         }
         return baseMapper.deleteBatchIds(ids) > 0;
