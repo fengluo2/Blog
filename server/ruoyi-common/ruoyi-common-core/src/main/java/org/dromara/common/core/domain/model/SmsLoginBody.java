@@ -22,7 +22,7 @@ public class SmsLoginBody {
     /**
      * 手机号
      */
-    @NotBlank(message = "{user.phonenumber.not.blank}")
+    @NotBlank(message = "{user.phoneNmber.not.blank}")
     private String phonenumber;
 
     /**

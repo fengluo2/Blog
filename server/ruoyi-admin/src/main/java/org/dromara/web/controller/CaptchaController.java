@@ -55,7 +55,7 @@ public class CaptchaController {
      * @param phonenumber 用户手机号
      */
     @GetMapping("/resource/sms/code")
-    public R<Void> smsCode(@NotBlank(message = "{user.phonenumber.not.blank}") String phonenumber) {
+    public R<Void> smsCode(@NotBlank(message = "{user.phoneNmber.not.blank}") String phonenumber) {
         String key = GlobalConstants.CAPTCHA_CODE_KEY + phonenumber;
         String code = RandomUtil.randomNumbers(4);
         RedisUtils.setCacheObject(key, code, Duration.ofMinutes(Constants.CAPTCHA_EXPIRATION));

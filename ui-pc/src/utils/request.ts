@@ -13,19 +13,19 @@ import { encrypt } from '@/utils/jsencrypt';
 
 let downloadLoadingInstance: LoadingInstance;
 // 是否显示重新登录
-export const isReLogin = { show: false };
+export const isRelogin = { show: false };
 export const globalHeaders = () => {
   return {
     Authorization: 'Bearer ' + getToken(),
-    clientId: import.meta.env.VITE_APP_CLIENT_ID
+    clientId: process.env.VITE_APP_CLIENT_ID
   };
 };
 
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8';
-axios.defaults.headers['clientId'] = import.meta.env.VITE_APP_CLIENT_ID;
+axios.defaults.headers['clientId'] = process.env.VITE_APP_CLIENT_ID;
 // 创建 axios 实例
 const service = axios.create({
-  baseURL: import.meta.env.VITE_APP_BASE_API,
+  baseURL: process.env.VITE_APP_BASE_API,
   timeout: 50000
 });
 
@@ -106,19 +106,19 @@ service.interceptors.response.use(
     }
     if (code === 401) {
       // prettier-ignore
-      if (!isReLogin.show) {
-        isReLogin.show = true;
+      if (!isRelogin.show) {
+        isRelogin.show = true;
         ElMessageBox.confirm('登录状态已过期，您可以继续留在该页面，或者重新登录', '系统提示', {
           confirmButtonText: '重新登录',
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
-          isReLogin.show = false;
+          isRelogin.show = false;
           useUserStore().logout().then(() => {
-              location.href = import.meta.env.VITE_APP_CONTEXT_PATH + 'index';
+              location.href = process.env.VITE_APP_CONTEXT_PATH + 'index';
             });
         }).catch(() => {
-          isReLogin.show = false;
+          isRelogin.show = false;
         });
       }
       return Promise.reject('无效的会话，或者会话已过期，请重新登录。');

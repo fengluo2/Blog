@@ -19,7 +19,7 @@ public class LoginBody {
     /**
      * 客户端id
      */
-    @NotBlank(message = "{auth.clientid.not.blank}")
+    @NotBlank(message = "{auth.clientId.not.blank}")
     private String clientId;
 
     /**
@@ -70,7 +70,7 @@ public class LoginBody {
     /**
      * 手机号
      */
-    @NotBlank(message = "{user.phonenumber.not.blank}", groups = {SmsGroup.class})
+    @NotBlank(message = "{user.phoneNmber.not.blank}", groups = {SmsGroup.class})
     private String phonenumber;
 
     /**

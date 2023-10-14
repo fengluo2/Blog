@@ -48,7 +48,7 @@ public class SecurityConfig implements WebMvcConfigurer {
                     // 检查是否登录 是否有token
                     StpUtil.checkLogin();
 
-                    // 检查 header 与 param 里的 clientid 与 token 里的是否一致
+                    // 检查 header 与 param 里的 clientId 与 token 里的是否一致
                     String headerCid = ServletUtils.getRequest().getHeader(LoginHelper.CLIENT_KEY);
                     String paramCid = ServletUtils.getParameter(LoginHelper.CLIENT_KEY);
                     String clientId = StpUtil.getExtra(LoginHelper.CLIENT_KEY).toString();
